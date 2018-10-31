@@ -103,7 +103,7 @@ func gitCommit(path, directory, msg string) string {
 func gitPush(path string) string {
 	cmd := exec.Command(path,"push", "-u ","origin"," master")
 	stdoutStderr, err := cmd.CombinedOutput()
-	
+	fmt.Printf("%v \n", string(stdoutStderr))
 	if err != nil {
 		log.Fatalf("cmd.Run() failed with %s \n", err)
 	}
